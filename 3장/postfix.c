@@ -1,5 +1,5 @@
 /*
-    프로그램 내용: 배열을 이용한 int 스택의 구현 (3-1)
+    프로그램 내용: 후위 표기 수식의 계싼 프로그램 (3-4)
 	실습일 : 26.04.03
 	학번 : 202311420
 	실습자 : 연승현
@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define MAX_STACK_SIZE 100
-typedef int Element;
+typedef double Element;
 
 Element data[MAX_STACK_SIZE];
 int top;
@@ -53,21 +53,38 @@ void print_stack(char msg[]) {
     printf("\n");
 }
 
-
-
-void main(void)
+double calc_postfix( char expr[] )
 {
-    int i;
-    init_stack();
-    for(i=1; i<10; i++) {
-        push(i);
-    }
+    char c;
+    int i = 0;
+    double val, val1, val2;
 
-    print_stack("스택 push 9회");
-    printf("\tpop() --> %d\n", pop());
-    printf("\tpop() --> %d\n", pop());
-    printf("\tpop() --> %d\n", pop());
-    print_stack("스택 pop 3회");
+    init_stack();
+    while (expr[i] != '\0') {
+        c = expr[i++];
+        if (c >= '0' && c <= '9') {
+            val = c - '0';
+            push(val);
+        }
+        else if (c == '+' || c == '-' || c == '*' || c == '/') {
+            val2 = pop();
+            val1 = pop();
+            switch (c) {
+                case '+': push(val1 + val2); break;
+                case '-': push(val1 - val2); break;
+                case '*': push(val1 * val2); break;
+                case '/': push(val1 / val2); break;
+            }
+        }
+    }
+    return pop();
 }
 
-// gcc ./stack.c -o ./start.out -lm -ljson-c -lncurses && clear && chmod +x ./start.out && ./start.out
+void main()
+{
+    char expr[2][80] = { "8 2 / 3 - 3 2 * +", "1 2 / 4 * 1 4 / *" };
+
+    printf("수식: %s = %1f\n", expr[0], calc_postfix(expr[0]));
+    printf("수식: %s = %1f\n", expr[1], calc_postfix(expr[1]));
+}
+// gcc ./postfix.c -o ./start.out -lm -ljson-c -lncurses && clear && chmod +x ./start.out && ./start.out

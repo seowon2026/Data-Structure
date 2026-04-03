@@ -30,7 +30,7 @@ void error(char str[]) {
 // 스택의 주요 연산: 공통
 void init_stack() { top = -1; }
 int is_empty() { return top == -1; }
-int is_full() { return top == MAX_STACK_SIZE; }
+int is_full() { return top == MAX_STACK_SIZE-1; }
 int size() { return top+1; }
 
 void push( Element e ) {

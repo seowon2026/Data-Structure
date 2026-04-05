@@ -1,11 +1,19 @@
+/*
+    프로그램 내용: 전체 다항식 프로그램 (2-7)
+	실습일 : 26.03.20
+	학번 : 202311420
+	실습자 : 연승현
+*/
+
+
 #include <stdio.h>
 
 #define MAX_DEGREE 101 // 다항식의 최대 차수 + 1
 
 
 typedef struct {
-    int degree;
-    float coef[MAX_DEGREE];
+    int degree;                 // 최고차항
+    float coef[MAX_DEGREE];     // 계수들을 저장하는 배열
 } Polynomial;
 
 Polynomial read_poly() {
@@ -34,12 +42,15 @@ Polynomial add_poly(Polynomial a, Polynomial b) {
     Polynomial p;
     if (a.degree > b.degree) {
         p = a;
-        for (i = 0; i < b.degree; i++)
+        for (i = 0; i <= b.degree; i++)
             p.coef[i+(p.degree - b.degree)] += b.coef[i];
     }
     else {
-        
+        p = b;
+        for(i = 0; i <= a.degree; i++)
+            p.coef[i + (p.degree - a.degree)] += a.coef[i];
     }
+    return p;
 }
 
 
@@ -47,8 +58,11 @@ void main() {
     Polynomial a, b, c;
     a = read_poly();            // 프로그램 2.5
     b = read_poly();            // 프로그램 2.4
-    c = add_poly();             // 프로그램 2.6
+    c = add_poly(a, b);             // 프로그램 2.6
     print_poly(a, " A = ");
     print_poly(b, " B = ");
     print_poly(c, " A+B = ");
 }
+
+
+// gcc ./2-7.c -o ./start.out -lm -ljson-c -lncurses && clear && chmod +x ./start.out && ./start.out

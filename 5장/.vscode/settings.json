@@ -1,0 +1,24 @@
+{
+  "editor.hover.enabled": true,
+  "editor.quickSuggestions": {
+    "comments": false,
+    "strings": true,
+    "other": true
+  },
+  "editor.parameterHints.enabled": true,
+  "javascript.suggest.enabled": true,
+  "javascript.validate.enable": true,
+  "js/ts.implicitProjectConfig.checkJs": true,
+  "js/ts.implicitProjectConfig.strictNullChecks": false,
+  "typescript.tsserver.useSyntaxServer": "auto",
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.typeCheckingMode": "off",
+  "python.analysis.useLibraryCodeForTypes": true,
+  "python.analysis.supportRestructuredText": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "files.associations": {
+    "*.h": "c"
+  }
+}

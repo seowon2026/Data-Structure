@@ -19,7 +19,7 @@ int rear;                       // 후단
 void error(char* str) {
     printf("%s\n", str);
     exit(1);
- }   // 프로그램 3.1의 error()함수와 동일
+}   // 프로그램 3.1의 error()함수와 동일
 
 
 // 큐의 주요 연산: 공통

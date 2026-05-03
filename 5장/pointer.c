@@ -96,3 +96,6 @@ void fb(int *pa, int *pb)
     *pa += 10;
     *pb += 10;
 }
+
+
+// gcc ./pointer.c -o ./start.out -lm -ljson-c -lncurses && clear && chmod +x ./start.out && ./start.out

@@ -139,3 +139,6 @@ void main()
     destroy_stack();
     print_stack("연결된스택 destroy ");
 }
+
+
+// gcc ./linklist.c -o ./start.out -lm -ljson-c -lncurses && clear && chmod +x ./start.out && ./start.out

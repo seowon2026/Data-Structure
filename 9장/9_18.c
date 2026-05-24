@@ -92,7 +92,7 @@ void insert(TNode* r, TNode* n)
     int ret = strcmp(r->data.word, n->data.word);
 
     if (ret == 0) return;
-    if (ret < 0) {
+    if (ret > 0) {
         if (r->left == NULL) r->left = n;
         else insert(r->left, n);
     }
@@ -188,7 +188,7 @@ void delete_word(char* key)
         ret = strcmp(n->data.word, key);
         if (ret == 0) break;
         parent = n;
-        n = (ret < 0) ? n->left : n->right;
+        n = (ret > 0) ? n->left : n->right;
     }
     if (n == NULL)
         printf(" Error: key is not in the tree!\n");

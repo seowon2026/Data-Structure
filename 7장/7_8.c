@@ -6,6 +6,7 @@
 */
 
 #include <stdio.h>
+#include <time.h>
 
 void hanoi_tower(int n, char from, char tmp, char to)
 {
@@ -20,7 +21,15 @@ void hanoi_tower(int n, char from, char tmp, char to)
 
 int main(void)
 {
+    clock_t start, end;
+    double elapsed;
+
+    start = clock();
     hanoi_tower(4, 'A', 'B', 'C');
+    end = clock();
+
+    elapsed = (double)(end - start) / CLOCKS_PER_SEC;
+    printf("실행 시간 = %.6f초\n", elapsed);
     return 0;
 }
 

@@ -1,6 +1,6 @@
 /*
-    프로그램 내용: Floyd의 최단 경로 프로그램 (12.6)
-    실습일: 26.06.05
+    프로그램 내용: 인접 행렬로 구현된 가중치 그래프 테스트 프로그램 (12.1)
+    실습일: 26.05.29
     학  번: 202311420
     실습자: 연승현
 */
@@ -11,15 +11,15 @@
 #define MAX_VTXS 256
 #define INF 9999
 
-typedef char VtxData;
-int adj[MAX_VTXS][MAX_VTXS];
-int vsize;
-VtxData vdata[MAX_VTXS];
-
 void error(char str[]) {
     printf("%s\n", str);
     exit(1);
 }
+
+typedef char VtxData;
+int adj[MAX_VTXS][MAX_VTXS];
+int vsize;
+VtxData vdata[MAX_VTXS];
 
 int is_empty_graph() { return (vsize == 0); }
 int is_full_graph() { return (vsize >= MAX_VTXS); }
@@ -90,46 +90,10 @@ void print_wgraph(char* msg)
     }
 }
 
-/* ==================== 프로그램 12.6 Floyd의 최단 경로 ==================== */
-int A[MAX_VTXS][MAX_VTXS];  // 최단경로 거리
-
-void printA( )
-{
-    int i, j;
-    printf("=======================\n");
-    for( i=0 ; i<vsize ; i++ ){
-        for(j=0; j<vsize; j++ ) {
-            if (A[i][j] == INF ) printf(" INF");
-            else printf("%4d ", A[i][j]);
-        }
-        printf("\n");
-    }
-    printf("=======================\n");
-}
-
-void shortest_path_floyd( )
-{
-    int i, j, k;
-    for( i=0 ; i<vsize ; i++ )
-        for( j=0 ; j<vsize ; j++ )
-            A[i][j] = adj[i][j];
-
-    for(k=0 ; k<vsize ; k++ ) {
-        for( i=0 ; i<vsize ; i++ )
-            for( j=0 ; j<vsize ; j++ ) {
-                if (A[i][k] + A[k][j] < A[i][j] )
-                    A[i][j] = A[i][k] + A[k][j];
-            }
-    }
-}
-
 void main()
 {
-    load_wgraph( "wgraph.txt" );  // 책 예제: "wgraph_sp.txt"
-    print_wgraph("최단거리(wgraph.txt)\n");
-    printf("Shortest Path By Floyd Algorithm\n");
-    shortest_path_floyd( );
-    printA();   // 진행상황(최단거리 행렬) 출력
+    load_wgraph("wgraph.txt");
+    print_wgraph("가중치그래프(wgraph.txt)\n");
 }
 
-// gcc ./12장/program12_6.c -o ./program12_6.out && clear && ./program12_6.out
+// gcc ./12장/program12_1.c -o ./program12_1.out && clear && ./program12_1.out

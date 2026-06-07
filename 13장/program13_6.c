@@ -22,23 +22,26 @@ static void merge(int list[], int left, int mid, int right)
 {
     int i, j, k = left, l;
     static int sorted[MAX_SIZE];
-    // 병합 정렬된 리스트의 병합
-    for( ;left<=mid && mid<right ; ) 
+    // 분할 정렬된 list의 병합
+    for( i=left, j=mid+1 ; i<=mid && j<=right ; )
         sorted[k++] = (list[i]<list[j]) ? list[i++] : list[j++];
+    // 한쪽에 남아 있는 레코드의 일괄 복사
     if( i > mid )
-        for( l = j ; l<=right ; l++)
-            sorted[k++] = list[l];
+        for( l=j ; l<=right ; l++, k++ )
+            sorted[k] = list[l];
     else 
-        for( l = i ; l<=mid ; l++)
-            sorted[k++] = list[l];
-    for( l = left ; l<=right ; l++)
+        for( l=i ; l<=mid ; l++, k++ )
+            sorted[k] = list[l];
+    // 배열 sorted[]의 리스트를 배열 list[]로 다시 복사
+    for( l=left ; l<=right ; l++ )
         list[l] = sorted[l];
 }
 
-void merge_sort(int list[], int left, int right)
+// 병합 정렬 알고리즘을 이용해 int 배열을 오름차순으로 정렬하는 함수
+void merge_sort ( int list[], int left, int right )
 {
-    if (left < right) {
-        int mid = (left + right) / 2;
+    if( left<right ) {
+        int mid = (left+right)/2;
         merge_sort(list, left, mid);
         merge_sort(list, mid+1, right);
         merge(list, left, mid, right);

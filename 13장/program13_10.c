@@ -61,9 +61,10 @@ void radixSort( int list[], int n )
         for( i=0 ; i<n ; i++ )
             enqueue( &queues[(list[i]/factor)%10], list[i]);
 
+        int pos = 0;
         for( b=0 ; b<BUCKETS ; b++ )
             while( !is_empty( &queues[b] ) )
-                list[i++] = dequeue( &queues[b] );
+                list[pos++] = dequeue( &queues[b] );
 
         factor *= 10;
         printStep(list, n, d+1);

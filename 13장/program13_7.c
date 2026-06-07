@@ -17,20 +17,26 @@ void printArray(int arr[], int n, char *str)
     printf("\n");
 }
 
-int partition ( int list[], int left, int right )
+int partition(int list[], int left, int right)
 {
-    int tmp;
-    int low = left+1;
-    int high = right;
-    int pivot = list[left];
-    while(low < high) {
-        for ( ; low<right && list[low] < pivot ; low++);
-        for ( ; high>left && list[high] > pivot ; high--);
-        if ( low < high )
-            SWAP(list[low],list[high],tmp);
-    }
-    SWAP(list[left],list[high],tmp);
-    return high;
+	int pivot, tmp;
+	int low, high;
+
+	low = left;
+	high = right + 1;
+	pivot = list[left];
+	do {
+		do
+			low++;
+		while (low <= right && list[low] < pivot);
+		do
+			high--;
+		while (high >= left && list[high] > pivot);
+		if (low < high) SWAP(list[low], list[high], tmp);
+	} while (low < high);
+
+	SWAP(list[left], list[high], tmp);
+	return high;
 }
 
 void quick_sort ( int list[], int left, int right )

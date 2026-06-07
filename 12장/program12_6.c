@@ -132,4 +132,4 @@ void main()
     printA();   // 진행상황(최단거리 행렬) 출력
 }
 
-// gcc ./12장/program12_6.c -o ./program12_6.out && clear && ./program12_6.out
+// gcc ./program12_6.c -o ./program12_6.out && clear && ./program12_6.out

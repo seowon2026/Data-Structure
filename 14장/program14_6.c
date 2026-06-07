@@ -36,4 +36,4 @@ void main()
     }
 }
 
-// gcc ./14장/program14_6.c -o ./program14_6.out && clear && ./program14_6.out
+// gcc ./program14_6.c -o ./program14_6.out && clear && ./program14_6.out

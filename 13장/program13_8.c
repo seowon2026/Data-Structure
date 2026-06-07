@@ -49,4 +49,4 @@ void main()
     printf("Pivot index: %d\n", p);
 }
 
-// gcc ./13장/program13_8.c -o ./program13_8.out && clear && ./program13_8.out
+// gcc ./program13_8.c -o ./program13_8.out && clear && ./program13_8.out

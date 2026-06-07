@@ -11,6 +11,7 @@
 #define MAX_VTXS 256
 #define INF 9999
 
+// 오류 메시지를 출력하고 프로그램을 종료
 void error(char str[]) {
     printf("%s\n", str);
     exit(1);
@@ -21,9 +22,12 @@ int adj[MAX_VTXS][MAX_VTXS];
 int vsize;
 VtxData vdata[MAX_VTXS];
 
+// 그래프가 비어 있는지 확인
 int is_empty_graph() { return (vsize == 0); }
+// 그래프 정점 배열이 가득 찼는지 확인
 int is_full_graph() { return (vsize >= MAX_VTXS); }
 
+// 그래프를 빈 인접 행렬로 초기화
 void init_graph()
 {
     int i, j;
@@ -33,6 +37,7 @@ void init_graph()
             adj[i][j] = 0;
 }
 
+// 그래프에 새 정점을 추가
 void insert_vertex(VtxData name)
 {
     if (is_full_graph())
@@ -41,16 +46,19 @@ void insert_vertex(VtxData name)
         vdata[vsize++] = name;
 }
 
+// 방향 간선을 인접 행렬에 추가
 void insert_edge(int u, int v, int val)
 {
     adj[u][v] = val;
 }
 
+// 무방향 간선을 인접 행렬에 추가
 void insert_edge2(int u, int v, int val)
 {
     adj[u][v] = adj[v][u] = val;
 }
 
+// 파일에서 가중치 그래프 정보를 읽어 인접 행렬에 저장
 void load_wgraph(char* filename)
 {
     int i, j, val, n;
@@ -74,6 +82,7 @@ void load_wgraph(char* filename)
     }
 }
 
+// 가중치 그래프의 인접 행렬을 화면에 출력
 void print_wgraph(char* msg)
 {
     int i, j, val;
@@ -90,10 +99,11 @@ void print_wgraph(char* msg)
     }
 }
 
+// 가중치 그래프를 파일에서 읽고 출력
 void main()
 {
     load_wgraph("wgraph.txt");
     print_wgraph("가중치그래프(wgraph.txt)\n");
 }
 
-// gcc ./12장/program12_1.c -o ./program12_1.out && clear && ./program12_1.out
+// gcc ./12_1.c -o ./start.out -lm -ljson-c -lncurses && clear && chmod +x ./start.out && ./start.out

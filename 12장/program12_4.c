@@ -118,4 +118,4 @@ void main()
     Prim();
 }
 
-// gcc ./12장/program12_4.c -o ./program12_4.out && clear && ./program12_4.out
+// gcc ./program12_4.c -o ./program12_4.out && clear && ./program12_4.out

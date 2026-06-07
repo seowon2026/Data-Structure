@@ -60,4 +60,4 @@ void main()
     printf("\n[프로그램 12.2] Union-find 연산 테스트 완료\n");
 }
 
-// gcc ./12장/program12_2.c -o ./program12_2.out && clear && ./program12_2.out
+// gcc ./program12_2.c -o ./program12_2.out && clear && ./program12_2.out

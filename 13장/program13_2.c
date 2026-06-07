@@ -47,4 +47,4 @@ void main()
     printArray( list, n, "Insertion " );
 }
 
-// gcc ./13장/program13_2.c -o ./program13_2.out && clear && ./program13_2.out
+// gcc ./program13_2.c -o ./program13_2.out && clear && ./program13_2.out

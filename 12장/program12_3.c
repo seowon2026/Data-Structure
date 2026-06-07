@@ -199,4 +199,4 @@ void main()
     Kruskal();
 }
 
-// gcc ./12장/program12_3.c -o ./program12_3.out && clear && ./program12_3.out
+// gcc ./program12_3.c -o ./program12_3.out && clear && ./program12_3.out

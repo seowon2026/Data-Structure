@@ -50,4 +50,4 @@ void main()
     printArray( list, n, "Selection " );
 }
 
-// gcc ./13장/program13_1.c -o ./program13_1.out && clear && ./program13_1.out
+// gcc ./program13_1.c -o ./program13_1.out && clear && ./program13_1.out

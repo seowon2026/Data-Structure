@@ -61,4 +61,4 @@ void main()
     printArray( list, n, "QuickSort " );
 }
 
-// gcc ./13장/program13_7.c -o ./program13_7.out && clear && ./program13_7.out
+// gcc ./program13_7.c -o ./program13_7.out && clear && ./program13_7.out

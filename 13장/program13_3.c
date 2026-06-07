@@ -53,4 +53,4 @@ void main()
     printArray( list, n, "Bubble " );
 }
 
-// gcc ./13장/program13_3.c -o ./program13_3.out && clear && ./program13_3.out
+// gcc ./program13_3.c -o ./program13_3.out && clear && ./program13_3.out

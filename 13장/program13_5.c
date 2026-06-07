@@ -58,4 +58,4 @@ void main()
     printArray( list, n, "ShellSort " );
 }
 
-// gcc ./13장/program13_5.c -o ./program13_5.out && clear && ./program13_5.out
+// gcc ./program13_5.c -o ./program13_5.out && clear && ./program13_5.out

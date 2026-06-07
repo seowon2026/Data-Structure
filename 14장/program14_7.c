@@ -93,4 +93,4 @@ void main()
     search_record( "class" );
 }
 
-// gcc ./14장/program14_7.c -o ./program14_7.out && clear && ./program14_7.out
+// gcc ./program14_7.c -o ./program14_7.out && clear && ./program14_7.out

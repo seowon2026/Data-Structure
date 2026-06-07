@@ -56,4 +56,4 @@ void main()
     printArray( &list[1], 9, "HeapSort " );
 }
 
-// gcc ./13장/program13_9.c -o ./program13_9.out && clear && ./program13_9.out
+// gcc ./program13_9.c -o ./program13_9.out && clear && ./program13_9.out

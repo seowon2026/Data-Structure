@@ -165,4 +165,4 @@ void main()
         print_shortest_path(0, i); // 0부터 i까지의 최단경로 출력
 }
 
-// gcc ./12장/program12_5.c -o ./program12_5.out && clear && ./program12_5.out
+// gcc ./program12_5.c -o ./program12_5.out && clear && ./program12_5.out

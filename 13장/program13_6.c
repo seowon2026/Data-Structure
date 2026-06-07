@@ -60,4 +60,4 @@ void main()
     printArray( list, n, "MergeSort " );
 }
 
-// gcc ./13장/program13_6.c -o ./program13_6.out && clear && ./program13_6.out
+// gcc ./program13_6.c -o ./program13_6.out && clear && ./program13_6.out

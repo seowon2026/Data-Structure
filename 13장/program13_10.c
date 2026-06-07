@@ -83,4 +83,4 @@ void main()
     printArray( list, n, "RadixSort " );
 }
 
-// gcc ./13장/program13_10.c -o ./program13_10.out && clear && ./program13_10.out
+// gcc ./program13_10.c -o ./program13_10.out && clear && ./program13_10.out

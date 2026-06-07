@@ -52,4 +52,4 @@ void main()
     printArray( list2, n, "Descending " );
 }
 
-// gcc ./13장/program13_4.c -o ./program13_4.out && clear && ./program13_4.out
+// gcc ./program13_4.c -o ./program13_4.out && clear && ./program13_4.out
